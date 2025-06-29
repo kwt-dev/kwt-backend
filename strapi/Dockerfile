@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
-# Install dependencies
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git python3
+# Install dependencies including curl for health checks
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git python3 curl
 
 # Set working directory
 WORKDIR /app
