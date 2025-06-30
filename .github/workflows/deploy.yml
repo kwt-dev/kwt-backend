@@ -53,12 +53,12 @@ jobs:
         run: |
           echo "## 🚀 Backend Deployment Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Image:** \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Strapi Image:** \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest\`" >> $GITHUB_STEP_SUMMARY
           echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Coolify Setup Instructions:" >> $GITHUB_STEP_SUMMARY
-          echo "1. In Coolify, create a new Docker service" >> $GITHUB_STEP_SUMMARY
-          echo "2. Use image: \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest\`" >> $GITHUB_STEP_SUMMARY
-          echo "3. Set port: 1337" >> $GITHUB_STEP_SUMMARY
-          echo "4. Add environment variables from backend/.env" >> $GITHUB_STEP_SUMMARY
-          echo "5. Add PostgreSQL database service dependency" >> $GITHUB_STEP_SUMMARY
+          echo "1. Create PostgreSQL service with image: \`pgvector/pgvector:pg15\`" >> $GITHUB_STEP_SUMMARY
+          echo "2. Create Redis service with image: \`redis:alpine\`" >> $GITHUB_STEP_SUMMARY
+          echo "3. Create Strapi service with image: \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest\`" >> $GITHUB_STEP_SUMMARY
+          echo "4. Set PostgreSQL port: 5432, Redis port: 6379, Strapi port: 1337" >> $GITHUB_STEP_SUMMARY
+          echo "5. Configure environment variables and service dependencies" >> $GITHUB_STEP_SUMMARY
