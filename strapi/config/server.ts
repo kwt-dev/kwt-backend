@@ -4,4 +4,10 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  admin: {
+    auth: {
+      secret: env('ADMIN_JWT_SECRET'),
+    },
+    allowedHosts: ['content.kingswindowtint.com', 'localhost'],
+  },
 });
