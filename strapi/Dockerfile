@@ -22,4 +22,4 @@ RUN npm run build
 EXPOSE 1337
 
 # Start the Strapi application
-CMD ["sh", "-c", "npm run strapi migration:run && npm run start"]
+CMD ["npm", "run", "start"]
